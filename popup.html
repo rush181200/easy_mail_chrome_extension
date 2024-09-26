@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Send Email</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            width: 400px; /* Adjusted width */
+            height: auto; /* Allows for dynamic height based on content */
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            text-align: center;
+        }
+        h3 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        button,
+        select {
+            width: 80%; /* Full width */
+            margin-bottom: 10px; /* Bottom margin */
+            padding: 10px 20px; /* Increased right padding */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+        input{
+          width: 80%;
+          margin-bottom: 10px; /* Bottom margin */
+            padding: 10px 20px; /* Increased right padding */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+        input:focus,
+        button:focus,
+        select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 10px; /* Top margin */
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .icon {
+            margin-bottom: 20px;
+        }
+    </style>
+    </style>
+  </head>
+  <body>
+    <div class="icon">
+      <img src="email.png" alt="Email Icon" width="50" height="50" />
+  </div>
+    <input type="email" id="email" placeholder="Recipient Email" />
+    <input type="text" id="name" placeholder="Recipient Name" />
+    <input type="text" id="position" placeholder="Job Position" />
+    <input type="text" id="company" placeholder="Company Name" />
+
+    <select id="resumeSelect">
+      <option value="">Select Resume</option>
+    </select>
+
+    <button id="sendButton">Send Email</button>
+
+    <a href="settings.html" target="_blank">Go to Settings</a>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

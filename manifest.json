@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Email Sender",
+  "version": "1.0",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "email.png",
+    "48": "email.png",
+    "128": "email.png"
+  },
+  "permissions": ["storage", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "settings.html"
+}

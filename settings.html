@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        width: 300px;
+      }
+      input,
+      button {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Upload Resume</h3>
+    <input type="file" id="resume" accept=".pdf,.doc,.docx" />
+    <input type="text" id="tag" placeholder="Tag for Resume" />
+    <button id="uploadButton">Upload Resume</button>
+
+    <h4>Uploaded Resumes</h4>
+    <ul id="resumeList"></ul>
+
+    <script src="settings.js"></script>
+  </body>
+</html>
