@@ -57,7 +57,7 @@ cd email-sender
    FILE_NAME=your_name_Resume.pdf
    ```
 
-   **Note**: For two-factor authentication (2FA) in your Google account, go to [App Passwords](https://support.google.com/accounts/answer/185201) and create an app password. Use this password in the `.env` file.
+   **Note**: For two-factor authentication (2FA) in your Google account, search app password and create a new app password. Use this password in the `.env` file.
 
 4. Start the backend server:
 
