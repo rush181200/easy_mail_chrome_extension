@@ -91,24 +91,6 @@ Best regards,\nRushabh Mehta\nhttp://www.therushabhmehta.com/`,
       ],
     };
 
-    //     let ManagermailOptions = {
-    //       from: process.env.EMAIL,
-    //       to: email,
-    //       subject: `Looking for Job Opportunities as ${position} at ${company}`,
-    //       text: `Hello ${name},\n
-    // I hope this email finds you well. My name is Rushabh Mehta, and I recently completed my Master’s in Computer Science at the State University of New York at Binghamton. I am currently seeking full-time opportunities as a ${position} at ${company}.\n
-    // With a solid foundation in JavaScript, React, TypeScript, and CSS, as well as experience with back-end technologies such as Node.js and Nest.js, I have developed and deployed scalable web applications that improve performance and user engagement. My recent role at Web3fusion LLC allowed me to collaborate with cross-functional teams to build seamless, responsive interfaces, while ensuring optimal performance and scalability.\n
-    // I am proficient in cloud platforms like AWS and Azure, version control with Git, and have worked with databases such as MySQL, PostgreSQL, and MongoDB. I am confident that my experience in both front-end and back-end development, coupled with my drive to continuously improve, would make me a valuable addition to your team.\n
-    // I have attached my resume for your review, and I would love the opportunity to discuss how my background can contribute to the goals of ${company}. Thank you for your time, and I look forward to hearing from you soon.\n
-    // Best regards,\nRushabh Mehta`,
-    //       attachments: [
-    //         {
-    //           filename: process.env.FILE_NAME,
-    //           path: outputFilePath, // Path to the PDF file
-    //         },
-    //       ],
-    //     };
-
     console.log("Starting email send at:", new Date().toISOString());
     await transporter.sendMail(mailOptions);
     console.log("Email sent at:", new Date().toISOString());
