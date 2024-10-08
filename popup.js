@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const name = document.getElementById("name").value;
       const position = document.getElementById("position").value;
       const company = document.getElementById("company").value;
+      const jobType = document.getElementById("jobType").value;
       const selectedResume = resumeSelect.value;
 
       console.log("Sending email with the following details:", {
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         name,
         position,
         company,
+        jobType,
         selectedResume,
       });
 
@@ -41,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       formData.append("name", name);
       formData.append("position", position);
       formData.append("company", company);
+      formData.append("type", jobType);
 
       if (selectedResume) {
         formData.append("resume", selectedResume); // Send base64 data

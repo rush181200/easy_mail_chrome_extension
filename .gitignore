@@ -46,3 +46,4 @@ yarn.lock
 .env.development.local
 .env.test.local
 .env.production.local
+email_chrome_extension.mp4
