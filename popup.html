@@ -75,6 +75,11 @@
     <div class="icon">
       <img src="email.png" alt="Email Icon" width="50" height="50" />
   </div>
+  <div  style="display: none;">
+    <p id="name1" style="display: none;">No person name found.</p>
+    <p id="company1" style="display: none;">No company name found.</p>
+  </div>
+
     <input type="email" id="email" placeholder="Recipient Email" />
     <input type="text" id="name" placeholder="Recipient Name" />
     <input type="text" id="position" placeholder="Job Position" />
@@ -92,8 +97,16 @@
 
     <button id="sendButton">Send Email</button>
 
+    <div  style="display: flex;">
+      <button id="fetchButton"  style="margin: 5px;">Fetch Data</button>
+      <button id="refreshButton" style="margin: 5px;">Refresh Extension</button>
+      <button id="clearButton" style="margin: 5px;">Clear Data</button>
+    </div>
+
     <a href="settings.html" target="_blank">Go to Settings</a>
 
     <script src="popup.js"></script>
   </body>
 </html>
+
+

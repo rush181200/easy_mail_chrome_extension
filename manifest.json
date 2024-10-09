@@ -10,9 +10,15 @@
     "48": "email.png",
     "128": "email.png"
   },
-  "permissions": ["storage", "activeTab"],
+  "permissions": ["storage", "activeTab", "scripting"],
   "background": {
     "service_worker": "background.js"
   },
-  "options_page": "settings.html"
+  "options_page": "settings.html",
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["content.js"]
+    }
+  ]
 }

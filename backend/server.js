@@ -68,7 +68,7 @@ app.post("/send-email", upload.none(), async (req, res) => {
       subject:
         type === "manager"
           ? `Looking for Job Opportunities as ${position} at ${company}`
-          : `Seeking Guidance and Referral for ${position} at ${company}`,
+          : `Seeking Guidance and Referral for ${position} position at ${company}`,
       text:
         type === "manager"
           ? `Hello ${name},\n

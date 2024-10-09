@@ -1,4 +1,57 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Retrieve the fetched data from Chrome storage
+  chrome.storage.local.get("fetchedData", (result) => {
+    const data = result.fetchedData || {};
+    const nameDisplay = document.getElementById("name1");
+    const companyDisplay = document.getElementById("company1");
+
+    // Update the HTML with fetched data
+    const personName = data.personName || "No person name found.";
+    const companyName = data.companyName || "No company name found.";
+
+    nameDisplay.textContent = personName;
+    companyDisplay.textContent = companyName;
+
+    // Also update the input fields
+    document.getElementById("name").value =
+      personName !== "No person name found." ? personName : "";
+    document.getElementById("company").value =
+      companyName !== "No company name found." ? companyName : "";
+  });
+
+  // Button to fetch data
+  const fetchButton = document.getElementById("fetchButton");
+  if (fetchButton) {
+    fetchButton.addEventListener("click", () => {
+      // Send a message to the content script to fetch data
+      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        chrome.tabs.sendMessage(tabs[0].id, { action: "fetchData" });
+      });
+    });
+  }
+
+  // Button to refresh the extension
+  const refreshButton = document.getElementById("refreshButton");
+  if (refreshButton) {
+    refreshButton.addEventListener("click", () => {
+      // Refresh the popup by reloading it
+      window.location.reload();
+    });
+  }
+
+  // Button to clear the stored data
+  const clearButton = document.getElementById("clearButton");
+  if (clearButton) {
+    clearButton.addEventListener("click", () => {
+      chrome.storage.local.remove("fetchedData", () => {
+        alert("Fetched data cleared.");
+        document.getElementById("name").textContent = "No person name found.";
+        document.getElementById("company").textContent =
+          "No company name found.";
+      });
+    });
+  }
+
   // Load resumes into the select dropdown when the popup opens
   const resumes = JSON.parse(localStorage.getItem("resumes")) || [];
   const resumeSelect = document.getElementById("resumeSelect");
@@ -34,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (!email || !name || !position || !company) {
-        alert("Please fill all the fields.");
+        alert("Please fill all the fields. Please");
         return;
       }
 
